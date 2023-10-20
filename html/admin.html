@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Bookworm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Categories.html">Categories</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="admin.html">Checkout</a></li>
+                <li><a href="Checkout.html">Checkout</a></li>
+    
+            </ul>
+        </nav> 
+        <h1>Admin</h1>
+    </header>
+    <style>
+        /* Reset some default browser styles */
+        body, h1, h2, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        background-color: #f2f2f2;}
+
+header {
+    background-color: #3498db; /* Blue background color for the header */
+    color: white; /* White text color */
+    text-align: center;
+    padding: 20px;
+}
+nav {
+    background-color: #2ecc71; /* Green background color for the navigation */
+    display: flex; /* Use a flex layout for the navigation links */
+    justify-content: space-around;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav a:hover{
+        background-color: #f1c40f;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+        section.product-management {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form#product-form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        footer {
+    background-color: #34495e; /* Dark blue background color for the footer */
+    color: white; /* White text color */
+    text-align: center;
+    padding: 10px;
+}
+section.newsletter {
+    background-color: #f1c40f; /* Yellow background color for the newsletter section */
+    color: #333; /* Dark text color */
+    text-align: center;
+    padding: 20px;
+}
+
+    </style>
+    
+
+    <section class="product-management">
+        <h2> Products</h2>
+
+        <!--  form to edit a product -->
+        <form
+        action="https://formspree.io/f/myyqlapq"
+        method="POST" id="product-form">
+
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product-name" value="Moral Essays" required>
+
+            <label for="product-author">Author:</label>
+            <input type="text" id="product-author" name="product-author" value="Alexander Pope" required>
+
+            <label for="product-price">Price:</label>
+            <input type="text" id="product-price" name="product-price" value="$19.99" required>
+
+            <label for="product-description">Description:</label>
+            <textarea id="product-description" name="product-description" required>
+            Timeless wisdom in Pope's Moral Essays, a literary treasure awaits you.  
+            </textarea>
+
+            <label for="product-quality">Quality:</label>
+            <select id="product-quality" name="product-quality">
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+            </select>
+
+            <button type="submit">Update Product</button>
+        </form>
+    </section>
+    <form id="product-form">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product-name" value="No Man Is an Island
+            " required>
+
+            <label for="product-author">Author:</label>
+            <input type="text" id="product-author" name="product-author" value="John Donne" required>
+
+            <label for="product-price">Price:</label>
+            <input type="text" id="product-price" name="product-price" value="$24.99" required>
+
+            <label for="product-description">Description:</label>
+            <textarea id="product-description" name="product-description" required>
+                Timeless wisdom in John Donne's 'No Man Is an Island' masterpiece.            
+            </textarea>
+
+            <label for="product-quality">Quality:</label>
+            <select id="product-quality" name="product-quality">
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+            </select>
+
+            <button type="submit">Update Product</button>
+        </form>
+    </section>
+
+    <section class="newsletter">
+        <h2>Subscribe to our Newsletter</h2>
+        <p>Stay updated with our latest books and offers.</p>
+        <form
+        action="https://formspree.io/f/myyqlapq"
+        method="POST">    
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <input type="submit" value="Subscribe">
+          </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Bookworm - Your Online Bookstore</p>
+    </footer>
+
+</body>
+</html>
