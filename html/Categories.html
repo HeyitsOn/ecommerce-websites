@@ -35,6 +35,22 @@
             background-color: #f1c40f;
         }
 
+        @keyframes moveRight {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(50px); /* Adjust the distance to move to the right */
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .image-animation:hover {
+            animation: moveRight 10s alternate infinite; /* Apply the moveRight animation to move elements to the right */
+        }
+
         section.about {
             background-color: #e74c3c; /* Red background color for the "About Us" section */
             color: white; /* White text color */
@@ -60,7 +76,6 @@
 
         /* Media query for screens with a maximum width of 768px */
         @media screen and (max-width: 768px) {
-            /* Add your CSS styles for screens with a maximum width of 768px here */
             body {
                 font-size: 16px; /* Adjust the font size for smaller screens */
             }
@@ -68,7 +83,6 @@
 
         /* Media query for screens with a maximum width of 480px */
         @media screen and (max-width: 480px) {
-            /* Add your CSS styles for screens with a maximum width of 480px here */
             body {
                 font-size: 14px; /* Adjust the font size for even smaller screens */
             }
@@ -87,19 +101,23 @@
             max-width: 200px; /* Set the maximum width of the image */
         }
 
-        body {
-            background-color: #2ecc71; /* Set a green background color for the content */
+        .video {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%; /* Set the video width to 100% to fill the screen */
+            height: 100vh; /* Set the video height to fill the screen height */
+            object-fit: cover; /* Maintain the video's aspect ratio and cover the entire screen */
         }
 
-        section.newsletter {
-            background-color: #f1c40f;
-            color: #333;
-            text-align: center;
-            padding: 20px;
+        .newsletter {
+            position: relative;
+            bottom: auto;
+            z-index: 1;
         }
     </style>
 </head>
-
 <body>
     <header>
         <h1>Welcome Bookworm</h1>
@@ -127,12 +145,12 @@
             </video>
         </div>
     
-        <div>
-            <a href="moral.jpg">Moral Essays</a>
+        <div class="image-animation">
+            <a href="moral.jpg" style="color: black;">Moral Essays</a>
             <img src="moral.jpg" alt="Moral Essays">
         </div>
-        <div>
-            <a href="man.jpg">No Man Is an Island</a>
+        <div class="image-animation">
+            <a href="man.jpg" style= "color: black;">Man Is an Island</a>
             <img src="man.jpg" alt="No Man Is an Island">
         </div>
         <!-- Add more categories if needed -->
@@ -145,7 +163,7 @@
         <form action="https://formspree.io/f/myyqlapq" method="POST">
             <label for="fname">First name:</label>
             <input type="text" id="fname" name="fname"><br><br>
-            <label for "name">Last name:</label>
+            <label for "lname">Last name:</label>
             <input type="text" id="lname" name="lname"><br><br>
             <input type="submit" value="Subscribe">
         </form>
